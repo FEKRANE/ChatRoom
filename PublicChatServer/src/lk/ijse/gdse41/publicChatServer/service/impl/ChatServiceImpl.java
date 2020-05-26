@@ -50,6 +50,7 @@ public class ChatServiceImpl implements ChatService {
 
     @Override
     public boolean checkCredentials(String username, String password) throws RemoteException, SQLException {
+        System.out.println(username+ "hheheheh");
         User user = usersDAO.get(username);
         try {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)) return true;

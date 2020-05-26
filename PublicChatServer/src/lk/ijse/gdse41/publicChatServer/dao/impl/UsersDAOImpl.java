@@ -85,11 +85,15 @@ public class UsersDAOImpl implements UsersDAO {
 
     @Override
     public User get(String username) throws SQLException {
+        System.out.println(username+ "hheheheh");
         String sql="SELECT * FROM users WHERE username=?";
+        System.out.println(username+ "hheheheh");
         stm=connection.prepareStatement(sql);
         stm.setObject(1,username);
         ResultSet rst=stm.executeQuery();
         if(rst.next()){
+            System.out.println( rst.getString(1));
+
             return new User(
                     rst.getString(1),
                     rst.getString(2),

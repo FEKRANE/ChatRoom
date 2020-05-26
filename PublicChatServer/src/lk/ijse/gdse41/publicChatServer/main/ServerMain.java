@@ -15,13 +15,13 @@ public class ServerMain {
     public static void main(String[] args) {
         Properties properties=new Properties();
         try {
-            InputStream input = new FileInputStream(new File("dbSettings/settings.properties"));
+            InputStream input = new FileInputStream(new File("C:\\Users\\acer\\Desktop\\ChatRoomFX\\PublicChatServer\\dbSettings\\settings.properties"));
             System.out.println(System.getProperty("user.dir"));
             properties.load(input);
 
             System.setProperty("java.rmi.server.hostname",properties.getProperty("ip"));
 
-            Registry registry= LocateRegistry.createRegistry(Integer.parseInt(properties.getProperty("registryPort")));
+            Registry registry= LocateRegistry.createRegistry(1099);
             registry.rebind("ChatServer",new ChatControllerImpl());
 
             System.out.println("Server Started...");

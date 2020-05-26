@@ -1,0 +1,15 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ChatRoomFX:jar">
+    <output-path>$PROJECT_DIR$/PublicChatClient/out/artifacts/ChatRoomFX_jar</output-path>
+    <root id="archive" name="ChatRoomFX.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="PublicChatCommon" />
+      <element id="module-output" name="PublicChatClient" />
+      <element id="module-output" name="PublicChatServer" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/jfoenix/jfoenix/1.9.1/jfoenix-1.9.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

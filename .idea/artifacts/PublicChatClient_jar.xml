@@ -2,10 +2,7 @@
   <artifact type="jar" name="PublicChatClient:jar">
     <output-path>$PROJECT_DIR$/PublicChatClient/out/artifacts/PublicChatClient_jar</output-path>
     <properties id="ant-postprocessing">
-      <options enabled="true">
-        <file>file://$PROJECT_DIR$/PublicChatClient/build.xml</file>
-        <target>post-jar-client</target>
-      </options>
+      <options enabled="true" />
     </properties>
     <root id="archive" name="PublicChatClient.jar">
       <element id="module-output" name="PublicChatClient" />

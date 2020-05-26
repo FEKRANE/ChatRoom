@@ -18,14 +18,15 @@ public class ServerConnector {
 
     private ServerConnector() throws IOException, NotBoundException {
         Properties properties=new Properties();
-//        InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("settings.properties");
-        InputStream input = new FileInputStream(new File("dbSettings/settings.properties"));
-
+       // InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("settings.properties");        properties.load(input);
+        InputStream input = new FileInputStream(new File("C:\\Users\\acer\\Desktop\\ChatRoomFX\\PublicChatServer\\out\\artifacts\\PublicChatServer_jar\\dbSettings\\settings.properties"));
         properties.load(input);
+        System.out.println(properties.getProperty("username"));
+        System.out.println(properties.getProperty("password"));
+        //properties.load(new FileInputStream("settings.properties"));
 //        System.setProperty("java.rmi.server.hostname",properties.getProperty("ip"));
-        System.out.println(properties.getProperty("server-ip"));
-        controller= (ChatController) Naming.lookup(String.format("rmi://%s:5050/ChatServer", properties.getProperty("server-ip")));
-
+        System.out.println(properties.getProperty("ip"));
+        controller= (ChatController) Naming.lookup(String.format("rmi://%s:1099/ChatServer", properties.getProperty("ip")));
     }
 
     public static ServerConnector getServerConnector() throws IOException, NotBoundException {

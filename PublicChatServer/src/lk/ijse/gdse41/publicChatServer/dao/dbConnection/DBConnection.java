@@ -14,10 +14,10 @@ public class DBConnection {
         Properties dbPro=new Properties();
 //        InputStream input = Thread.currentThread().getContextClassLoader().getResourceAsStream("settings.properties");
         try {
-            InputStream input = new FileInputStream(new File("dbSettings/settings.properties"));
+            InputStream input = new FileInputStream(new File("C:\\Users\\acer\\Desktop\\ChatRoomFX\\PublicChatServer\\out\\artifacts\\PublicChatServer_jar\\dbSettings\\settings.properties"));
             dbPro.load(input);
             System.out.println("Pass : "+dbPro.getProperty("password"));
-            String setDB=String.format("jdbc:mysql://%s:%s/%s", dbPro.getProperty("ip"),dbPro.getProperty("port"),dbPro.getProperty("database"));
+            String setDB=String.format("jdbc:mysql://%s:%s/%s?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", dbPro.getProperty("ip"),dbPro.getProperty("port"),dbPro.getProperty("database"));
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection= DriverManager.getConnection(setDB,dbPro.getProperty("username"),dbPro.getProperty("password"));
             return connection;
